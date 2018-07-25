@@ -18,8 +18,8 @@ This is what you will get:
 ● Functions ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 332
 " {{{
 " Keymapping
-  ▬ DOC: FUNCTION KEYS ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌ 79
-  ▬ DOC: KEYS WITH CONTROL/SHIFT ╌-╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌ 76
+  ▬ DOC: FUNCTION KEYS ------------------------------------------------- 79
+  ▬ DOC: KEYS WITH CONTROL/SHIFT --------------------------------------- 76
 " {{{
 " DOC: KEYS WITH LEADER
     ▪ DOC: <Leader><Leader> Start or end visual mode ................. 6
@@ -27,6 +27,15 @@ This is what you will get:
     ▪ DOC: <Leader>ac Align by ....................................... 5
 ```
       
+
+INSTALL
+=======
+
+For instance with Pathogen
+
+```
+git clone https://github.com/alfabeto1/lahfold.git ~/.vim/bundle/lahfold
+```
 
 LICENSE
 =======
