@@ -18,8 +18,8 @@ This is what you will get:
 ● Functions ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 332
 " {{{
 " Keymapping
-  ▬ DOC: FUNCTION KEYS ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌ 79
-  ▬ DOC: KEYS WITH CONTROL/SHIFT ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌ 76
+  ▬ DOC: FUNCTION KEYS ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌ 79
+  ▬ DOC: KEYS WITH CONTROL/SHIFT ╌-╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌ 76
 " {{{
 " DOC: KEYS WITH LEADER
     ▪ DOC: <Leader><Leader> Start or end visual mode ................. 6
