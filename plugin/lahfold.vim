@@ -17,8 +17,15 @@ set foldtext=FoldText()
 function! FoldText()
     " {{{
     " Vars
-    let l:line   = 'Unnamed fold'
-    let l:level  = v:foldlevel
+    let l:maxlen    = 100   " Max line len for fold header
+    let l:fillchar  = '―'
+    let l:fillchar2 = '╌'
+    let l:fillchar3 = '.'
+    let l:bullet    = '● '
+    let l:bullet2   = '▬ '
+    let l:bullet3   = '▪ '
+    let l:line      = 'Unnamed fold'
+    let l:level     = v:foldlevel
     if ( l:level > 5 )
          l:level = 5
     endif
@@ -26,7 +33,6 @@ function! FoldText()
     " }}}
     " {{{
     " Calculating line len
-    let l:maxlen    = 80    " Max line len for fold header
     let l:foldlinelen=winwidth(0) - &foldcolumn
     if (&number)
         let l:foldlinelen=l:foldlinelen - &numberwidth -1
@@ -38,12 +44,6 @@ function! FoldText()
     " }}}
     " {{{
     " Different fillchars and bullets for foldlevel
-    let l:fillchar  = '―'
-    let l:fillchar2 = '╌'
-    let l:fillchar3 = '.'
-    let l:bullet    = '● '
-    let l:bullet2   = '▬ '
-    let l:bullet3   = '▪ '
     if (l:level == 2)
         let l:fillchar  = l:fillchar2
         let l:bullet    = l:bullet2
