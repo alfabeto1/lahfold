@@ -13,37 +13,27 @@
 " My very own FoldText function, with three levels of indent depending on
 " foldlevel. Every level has it's own bullet point.
 set foldtext=FoldText()
+set fillchars=
 " {{{
 function! FoldText()
     " {{{
     " Vars
-    let l:maxlen    = 100   " Max line len for fold header
-    let l:fillchar  = '―'
-    let l:fillchar2 = '╌'
-    let l:fillchar3 = '.'
-    let l:bullet    = '● '
-    let l:bullet2   = '▬ '
-    let l:bullet3   = '▪ '
-    let l:line      = 'Unnamed fold'
-    let l:level     = v:foldlevel
+    let l:line   = 'Unnamed fold'
+    let l:level  = v:foldlevel
     if ( l:level > 5 )
          l:level = 5
     endif
-
-    " }}}
-    " {{{
-    " Calculating line len
-    let l:foldlinelen=winwidth(0) - &foldcolumn
-    if (&number)
-        let l:foldlinelen=l:foldlinelen - &numberwidth -1
-    endif
-    if ( l:foldlinelen > l:maxlen)
-        let l:foldlinelen = l:maxlen
-    endif
-
-    " }}}
-    " {{{
     " Different fillchars and bullets for foldlevel
+    let l:fillchar  = '―'
+    let l:fillchar2 = '╌'
+    let l:fillchar2 = '…'
+    let l:fillchar3 = '.'
+    " let l:bullet    = '● '
+    " let l:bullet2   = '▬ '
+    " let l:bullet3   = '▪ '
+    let l:bullet = '■ '
+    let l:bullet2= '▪ '
+    let l:bullet3= '▫ '
     if (l:level == 2)
         let l:fillchar  = l:fillchar2
         let l:bullet    = l:bullet2
@@ -52,6 +42,18 @@ function! FoldText()
             let l:fillchar = l:fillchar3
             let l:bullet   = l:bullet3
         endif
+    endif
+
+    " }}}
+    " {{{
+    " Calculating line len
+    let l:maxlen    = &textwidth   " Max line len for fold header
+    let l:foldlinelen=winwidth(0) - &foldcolumn
+    if (&number)
+        let l:foldlinelen=l:foldlinelen - &numberwidth -1
+    endif
+    if ( l:foldlinelen > l:maxlen)
+        let l:foldlinelen = l:maxlen
     endif
 
     " }}}
@@ -65,6 +67,7 @@ function! FoldText()
         let l:line = (getline(i))
         break
     endfor
+    let l:line = substitute(l:line, '^ *\/\/ *','','g')
     let l:line = substitute(l:line, '<!--','','g')
     let l:line = substitute(l:line, '-->','','g')
     let l:line = substitute(l:line, '"* *{{'.'{{*\d*','','g')
@@ -94,7 +97,7 @@ function! FoldText()
     " {{{
     " Adjusting text
     " Left Indent
-    let l:left    = repeat ('  ',l:level-1)
+    let l:left    = repeat ('    ',l:level-1)
 
     " Right Indent
     let l:right   = 4 * (l:level-1)
